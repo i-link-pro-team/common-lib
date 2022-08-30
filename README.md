@@ -7,6 +7,12 @@
 
 A library that collects all the code that we use very often in NestJS. This includes: scalars, interfaces, types, modules, services, decorators, helpers, guards, etc. 
 
+## Installation
+
+```
+npm i --save @ilink-dev/common
+```
+
 ## Documentation
 
 [Documentation](/docs/DOCUMENTATION.md)
