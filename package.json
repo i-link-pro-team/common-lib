@@ -1,6 +1,6 @@
 {
   "name": "@ilink/common",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "main": "./dist/index.js",
   "license": "MIT",
