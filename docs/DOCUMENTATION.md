@@ -2,7 +2,7 @@
 
 ## Exception Filters
 
-### [CommonExceptionFilter](https://github.com/i-link-pro-team/common-lib/lib/exception-filters/common.exception-filter.ts)
+### [CommonExceptionFilter](https://github.com/i-link-pro-team/common-lib/tree/main/exception-filters/common.exception-filter.ts)
 
 Exception filters allow us not to use `try / catch` as often as we do now, and to handle them within the same class (like the error aggregator class). Find out more here:
 
@@ -12,7 +12,7 @@ Exception filters allow us not to use `try / catch` as often as we do now, and t
 
 ## Interceptors
 
-### [LoggingInterceptor](https://github.com/i-link-pro-team/common-lib/lib/interceptors/logging.interceptor.ts)
+### [LoggingInterceptor](https://github.com/i-link-pro-team/common-lib/tree/main/interceptors/logging.interceptor.ts)
 
 An interceptor that logs request/response, the execution time of the function, the name of the methods that were executed, headers. Suitable for debug mode, when the service is already in dev. Retrieves the x-request-id if passed in the header. You can turn on / off some functions: headers, request, response, handlers
 
@@ -42,7 +42,7 @@ async function bootstrap(): Promise<void> {
 
 ## GraphQL
 
-### [GraphQL HTTP Client](https://github.com/i-link-pro-team/common-lib/lib/graphql/client/graphql-client.service.ts )
+### [GraphQL HTTP Client](https://github.com/i-link-pro-team/common-lib/tree/main/graphql/client/graphql-client.service.ts )
 
 The service provides methods for sending GQL queries over HTTP. Benefits of using:
 
@@ -72,11 +72,11 @@ export class CatService extends GraphQLClientService {
 }
 ```
 
-### [SortOrderEnum](https://github.com/i-link-pro-team/common-lib/lib/graphql/enums/sort-order.enum.ts)
+### [SortOrderEnum](https://github.com/i-link-pro-team/common-lib/tree/main/graphql/enums/sort-order.enum.ts)
 
 When implementing sorting, it is very often necessary to implement ascending/descending sorting. **SortOrderEnum** contains two values ​​**ASC** and **DESC**, it can be used in GQL inputs and inserted into typeorm sort fields.
 
-### [FilterInput](https://github.com/i-link-pro-team/common-lib/lib/graphql/inputs/filter.input.ts)
+### [FilterInput](https://github.com/i-link-pro-team/common-lib/tree/main/graphql/inputs/filter.input.ts)
 
 GQL Input is often used when filtering needs to be implemented. The main fields for filtering are ids, skip, limit. FilterInput implements them, and sets **default values**.
 
@@ -98,7 +98,7 @@ export class CatInput extends FilterInput {
 
 Scalars are used to use types not found in GraphQL. For example BigNumber, a type with which it is convenient to work with large numbers. BigNumberScalar takes a string as input and parses it into BigNumber, thus we can validate fields and get rid of unnecessary code
 
-### [PaginatedType](https://github.com/i-link-pro-team/common-lib/lib/graphql/types/paginated.type.ts)
+### [PaginatedType](https://github.com/i-link-pro-team/common-lib/tree/main/graphql/types/paginated.type.ts)
 
 GraphQL type that implements pagination. With it, not all essences can be given to the front, but only a certain part. Using skip and limit, you can get from
 
@@ -130,7 +130,7 @@ export class BalancesType extends PaginatedType(BalancesType) {}
 
 ## Helpers
 
-### [clearUndefinedProperties](https://github.com/i-link-pro-team/common-lib/lib/helpers/clear-undefind-properties.helper.ts)
+### [clearUndefinedProperties](https://github.com/i-link-pro-team/common-lib/tree/main/helpers/clear-undefind-properties.helper.ts)
 
 The clearUndefinedProperties function removes fields in an object whose type is **undefined**. It is very often used when you need to send a GQL request, or find entities using a filter, since typeorm does not accept undefined well.
 
@@ -143,7 +143,7 @@ async findEntity(filter: Filter): Promise<Entity> {
 }
 ```
 
-### [betweenDates](https://github.com/i-link-pro-team/common-lib/lib/helpers/between-dates.helper.ts)
+### [betweenDates](https://github.com/i-link-pro-team/common-lib/tree/main/helpers/between-dates.helper.ts)
 
 The betweenDates function is used for filtering in typeorm. Typeorm has its own Between() function, but it doesn't work well with dates. The function parses the date into the correct values ​​and returns `FindOperator`
 
@@ -156,11 +156,11 @@ const entities = await this._entityRepository.find({
 })
 ```
 
-### [randomString](https://github.com/i-link-pro-team/common-lib/lib/helpers/random-string.helper.ts)
+### [randomString](https://github.com/i-link-pro-team/common-lib/tree/main/helpers/random-string.helper.ts)
 
 Returns a random string of the given length. You can use the `onlyNumbers` flag to get a string of numbers.
 
-### [applyFilterToSelector](https://github.com/i-link-pro-team/common-lib/lib/helpers/apply-filter-to-selector.helper.ts )
+### [applyFilterToSelector](https://github.com/i-link-pro-team/common-lib/tree/main/helpers/apply-filter-to-selector.helper.ts )
 
 Returns an object with the passed fields for filtering. Gets the ids, skip, limit fields and puts them in their places. Returns an object that can be used in entity search methods
 
@@ -173,7 +173,7 @@ const entities = await this._entityRepository.find(findOptions)
 
 ## Interfaces
 
-### [Paginated](https://github.com/i-link-pro-team/common-lib/lib/interfaces/paginated.interface.ts)
+### [Paginated](https://github.com/i-link-pro-team/common-lib/tree/main/interfaces/paginated.interface.ts)
 
 Interface implementing pagination with template type
 
@@ -188,7 +188,7 @@ export interface Paginated<T> {
 
 ## TypeORM
 
-### [CommonBaseEntity](https://github.com/i-link-pro-team/common-lib/lib/typeorm/entities/common-base-entity.entity.ts )
+### [CommonBaseEntity](https://github.com/i-link-pro-team/common-lib/tree/main/typeorm/entities/common-base-entity.entity.ts )
 
 Entity implements the main fields in the database, such as id, createdAt, updatedAt, deletedAt, version.
 
@@ -208,7 +208,7 @@ Result in database
 | cat | time-here | time-here | NULL | 1 |
 | cat2 | time-here | time-here | time-here | 3 |
 
-### [BigNumberFieldTransformer](https://github.com/i-link-pro-team/common-lib/lib/typeorm/transformers/bignumber-field.transformer.ts)
+### [BigNumberFieldTransformer](https://github.com/i-link-pro-team/common-lib/tree/main/typeorm/transformers/bignumber-field.transformer.ts)
 
 Transformer for typeorm. With it, you can pass BigNumber types to entities, which will be represented in the database in other types (string by default)
 
